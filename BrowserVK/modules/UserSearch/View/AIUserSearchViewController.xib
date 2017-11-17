@@ -16,10 +16,25 @@
             <view key="view" contentMode="scaleToFill" id="Tsi-B4-gi6">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Na2-85-QvZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tableView>
+                </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Na2-85-QvZ" firstAttribute="bottom" secondItem="B35-pP-1gq" secondAttribute="bottom" id="Mba-sb-KKa"/>
+                    <constraint firstItem="Na2-85-QvZ" firstAttribute="top" secondItem="Tsi-B4-gi6" secondAttribute="top" id="PCa-RE-UO3"/>
+                    <constraint firstItem="Na2-85-QvZ" firstAttribute="leading" secondItem="B35-pP-1gq" secondAttribute="leading" id="TG2-1m-7QC"/>
+                    <constraint firstItem="Na2-85-QvZ" firstAttribute="trailing" secondItem="B35-pP-1gq" secondAttribute="trailing" id="e79-GG-ahq"/>
+                </constraints>
                 <viewLayoutGuide key="safeArea" id="B35-pP-1gq"/>
             </view>
-            <point key="canvasLocation" x="25" y="1"/>
+            <connections>
+                <outlet property="tableView" destination="Na2-85-QvZ" id="y3A-LF-mJ3"/>
+            </connections>
+            <point key="canvasLocation" x="24.5" y="0.5"/>
         </viewController>
     </objects>
 </document>

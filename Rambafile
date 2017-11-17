@@ -4,7 +4,6 @@ company: Ilyas
 ### Xcode project settings
 project_name: BrowserVK
 xcodeproj_path: BrowserVK.xcodeproj
-prefix: AI
 
 ### Code generation settings section
 # The main project target name
@@ -18,13 +17,13 @@ project_group_path: /BrowserVK/modules
 
 ### Tests generation settings section
 # The tests target name
-test_target: BrowserVK
+test_target: BrowserVKTests
 
 # The file path for new tests
-test_file_path: /BrowserVK/tests
+test_file_path: /BrowserVKTests/modules
 
 # The Xcode group path to new tests
-test_group_path: /BrowserVK/tests
+test_group_path: /BrowserVKTests/modules
 
 ### Dependencies settings section
 podfile_path: /BrowserVK
