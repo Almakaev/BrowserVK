@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UserSearchCell" rowHeight="71" id="KGk-i7-Jjw" customClass="UserSearchTableViewCell" customModule="BrowserVK">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="286" height="72.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYE-h7-G2Z">
+                        <rect key="frame" x="74" y="26" width="204" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cvN-S4-36f">
+                        <rect key="frame" x="16" y="11" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="Qn0-UF-1PF"/>
+                            <constraint firstAttribute="height" constant="50" id="opc-xv-SUe"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact_mask" translatesAutoresizingMaskIntoConstraints="NO" id="UIC-oX-AfX">
+                        <rect key="frame" x="16" y="11" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="ofX-FU-qwe"/>
+                            <constraint firstAttribute="height" constant="50" id="xT2-VA-aYP"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bYE-h7-G2Z" firstAttribute="leading" secondItem="cvN-S4-36f" secondAttribute="trailing" constant="8" id="19s-vy-s5E"/>
+                    <constraint firstItem="bYE-h7-G2Z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="96Z-hU-uM0"/>
+                    <constraint firstItem="UIC-oX-AfX" firstAttribute="leading" secondItem="cvN-S4-36f" secondAttribute="leading" id="FyP-34-Xc9"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="cvN-S4-36f" secondAttribute="bottom" constant="1" id="JRk-WF-Dkd"/>
+                    <constraint firstItem="cvN-S4-36f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="LsU-SV-SSC"/>
+                    <constraint firstItem="bYE-h7-G2Z" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="OWY-4Y-s0c"/>
+                    <constraint firstItem="cvN-S4-36f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Raa-7B-Rh2"/>
+                    <constraint firstItem="UIC-oX-AfX" firstAttribute="top" secondItem="cvN-S4-36f" secondAttribute="top" id="TXk-90-1Js"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="bYE-h7-G2Z" secondAttribute="bottom" constant="15" id="flP-T1-f1c"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="26" y="66.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="contact_mask" width="120" height="120"/>
+    </resources>
+</document>
