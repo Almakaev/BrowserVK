@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		17CAEC7E35F7EDFB005501D0 /* UserSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE2BB3D6CD1BBCE82EC34DF /* UserSearchPresenter.swift */; };
-		1CAE15333E96196DB2D89277 /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2D6D709527F364269A30B7 /* UserSearchViewController.swift */; };
 		20CBB99287120C7505383330 /* UserSearchInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C209076C9E48E59B3637D /* UserSearchInteractorInput.swift */; };
 		2105D3936928F04556BD11D5 /* UserSearchModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC702B4528CE60271342DC /* UserSearchModuleInput.swift */; };
 		22D7474DA6C0770754E20D1F /* UserSearchConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573B9376E48E6301FEBC04A5 /* UserSearchConfiguratorTests.swift */; };
-		284C1ACE1FBE839700F00D23 /* AIUserSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284C1ACD1FBE839700F00D23 /* AIUserSearchViewController.xib */; };
-		284C1AD51FBE9A0C00F00D23 /* AIUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284C1AD31FBE9A0C00F00D23 /* AIUserTableViewCell.swift */; };
-		284C1AD61FBE9A0C00F00D23 /* AIUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284C1AD41FBE9A0C00F00D23 /* AIUserTableViewCell.xib */; };
+		284BCCAC1FC04C7700979E27 /* UserSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284BCCAA1FC04C7700979E27 /* UserSearchTableViewCell.swift */; };
+		284BCCAD1FC04C7700979E27 /* UserSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 284BCCAB1FC04C7700979E27 /* UserSearchTableViewCell.xib */; };
 		284C1ADE1FBEA5B500F00D23 /* BrowserVKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284C1ADD1FBEA5B500F00D23 /* BrowserVKTests.swift */; };
+		28D276931FC0493400D4F4CE /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D276911FC0493400D4F4CE /* UserSearchViewController.swift */; };
+		28D276941FC0493400D4F4CE /* UserSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28D276921FC0493400D4F4CE /* UserSearchViewController.xib */; };
 		28D55AC41FBD4A9400B9C66C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D55AC31FBD4A9400B9C66C /* AppDelegate.swift */; };
 		28D55ACB1FBD4A9400B9C66C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28D55ACA1FBD4A9400B9C66C /* Assets.xcassets */; };
 		28D55ACE1FBD4A9400B9C66C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D55ACC1FBD4A9400B9C66C /* LaunchScreen.storyboard */; };
@@ -48,12 +48,13 @@
 		141200FA96B4BCA65C6CD7AF /* UserSearchPresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchPresenterTests.swift; sourceTree = "<group>"; };
 		18483260B23F1A372A37232E /* UserSearchInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchInteractor.swift; sourceTree = "<group>"; };
 		1EE2BB3D6CD1BBCE82EC34DF /* UserSearchPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchPresenter.swift; sourceTree = "<group>"; };
-		284C1ACD1FBE839700F00D23 /* AIUserSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AIUserSearchViewController.xib; sourceTree = "<group>"; };
-		284C1AD31FBE9A0C00F00D23 /* AIUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIUserTableViewCell.swift; sourceTree = "<group>"; };
-		284C1AD41FBE9A0C00F00D23 /* AIUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AIUserTableViewCell.xib; sourceTree = "<group>"; };
+		284BCCAA1FC04C7700979E27 /* UserSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchTableViewCell.swift; sourceTree = "<group>"; };
+		284BCCAB1FC04C7700979E27 /* UserSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSearchTableViewCell.xib; sourceTree = "<group>"; };
 		284C1ADB1FBEA5B500F00D23 /* BrowserVKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrowserVKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		284C1ADD1FBEA5B500F00D23 /* BrowserVKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserVKTests.swift; sourceTree = "<group>"; };
 		284C1ADF1FBEA5B500F00D23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28D276911FC0493400D4F4CE /* UserSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
+		28D276921FC0493400D4F4CE /* UserSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSearchViewController.xib; sourceTree = "<group>"; };
 		28D55AC01FBD4A9400B9C66C /* BrowserVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowserVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28D55AC31FBD4A9400B9C66C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D55ACA1FBD4A9400B9C66C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		4225A1A05046DC49533EE98F /* UserSearchViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchViewOutput.swift; sourceTree = "<group>"; };
 		573B9376E48E6301FEBC04A5 /* UserSearchConfiguratorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchConfiguratorTests.swift; sourceTree = "<group>"; };
 		5D0ABA3FF6CB0B8B182B04C1 /* UserSearchRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchRouter.swift; sourceTree = "<group>"; };
-		5E2D6D709527F364269A30B7 /* UserSearchViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
 		6E32788BA7C38F6201DDB7E7 /* UserSearchViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchViewInput.swift; sourceTree = "<group>"; };
 		934027F97D5D5213FD08CC72 /* UserSearchConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchConfigurator.swift; sourceTree = "<group>"; };
 		936004C113DC6DF2D0E2AB63 /* UserSearchRouterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSearchRouterTests.swift; sourceTree = "<group>"; };
@@ -105,10 +105,10 @@
 			children = (
 				6E32788BA7C38F6201DDB7E7 /* UserSearchViewInput.swift */,
 				4225A1A05046DC49533EE98F /* UserSearchViewOutput.swift */,
-				5E2D6D709527F364269A30B7 /* UserSearchViewController.swift */,
-				284C1ACD1FBE839700F00D23 /* AIUserSearchViewController.xib */,
-				284C1AD31FBE9A0C00F00D23 /* AIUserTableViewCell.swift */,
-				284C1AD41FBE9A0C00F00D23 /* AIUserTableViewCell.xib */,
+				28D276911FC0493400D4F4CE /* UserSearchViewController.swift */,
+				28D276921FC0493400D4F4CE /* UserSearchViewController.xib */,
+				284BCCAA1FC04C7700979E27 /* UserSearchTableViewCell.swift */,
+				284BCCAB1FC04C7700979E27 /* UserSearchTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -352,10 +352,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				284BCCAD1FC04C7700979E27 /* UserSearchTableViewCell.xib in Resources */,
+				28D276941FC0493400D4F4CE /* UserSearchViewController.xib in Resources */,
 				28D55ACE1FBD4A9400B9C66C /* LaunchScreen.storyboard in Resources */,
-				284C1ACE1FBE839700F00D23 /* AIUserSearchViewController.xib in Resources */,
 				28D55ACB1FBD4A9400B9C66C /* Assets.xcassets in Resources */,
-				284C1AD61FBE9A0C00F00D23 /* AIUserTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,17 +379,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				284BCCAC1FC04C7700979E27 /* UserSearchTableViewCell.swift in Sources */,
 				28D55AC41FBD4A9400B9C66C /* AppDelegate.swift in Sources */,
-				284C1AD51FBE9A0C00F00D23 /* AIUserTableViewCell.swift in Sources */,
 				507F7FACFA06FA8756C01D19 /* UserSearchViewInput.swift in Sources */,
 				D444F50A6562072B382044BA /* UserSearchViewOutput.swift in Sources */,
-				1CAE15333E96196DB2D89277 /* UserSearchViewController.swift in Sources */,
 				2105D3936928F04556BD11D5 /* UserSearchModuleInput.swift in Sources */,
 				17CAEC7E35F7EDFB005501D0 /* UserSearchPresenter.swift in Sources */,
 				20CBB99287120C7505383330 /* UserSearchInteractorInput.swift in Sources */,
 				C0707353ACE5D60C4521ECD8 /* UserSearchInteractorOutput.swift in Sources */,
 				69BD9343D6472F3EE8A22832 /* UserSearchInteractor.swift in Sources */,
 				8D714D5B8A80D431C8D4D421 /* UserSearchRouterInput.swift in Sources */,
+				28D276931FC0493400D4F4CE /* UserSearchViewController.swift in Sources */,
 				347045B422DD4CD257109413 /* UserSearchRouter.swift in Sources */,
 				D7CC6EA2B7E5BD4E4C735580 /* UserSearchConfigurator.swift in Sources */,
 				7BB455E0394D33B0A0ED98FE /* UserSearchInitializer.swift in Sources */,
