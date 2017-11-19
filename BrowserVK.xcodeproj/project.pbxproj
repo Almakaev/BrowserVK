@@ -107,8 +107,7 @@
 				4225A1A05046DC49533EE98F /* UserSearchViewOutput.swift */,
 				28D276911FC0493400D4F4CE /* UserSearchViewController.swift */,
 				28D276921FC0493400D4F4CE /* UserSearchViewController.xib */,
-				284BCCAA1FC04C7700979E27 /* UserSearchTableViewCell.swift */,
-				284BCCAB1FC04C7700979E27 /* UserSearchTableViewCell.xib */,
+				28723CDC1FC08BC30048973A /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,6 +128,15 @@
 				33880C719D9FA9222CD49C3E /* modules */,
 			);
 			path = BrowserVKTests;
+			sourceTree = "<group>";
+		};
+		28723CDC1FC08BC30048973A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				284BCCAA1FC04C7700979E27 /* UserSearchTableViewCell.swift */,
+				284BCCAB1FC04C7700979E27 /* UserSearchTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		28D55AB71FBD4A9400B9C66C = {

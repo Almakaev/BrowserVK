@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         UserSearchRouter().openUserSearchViewController(in: window!)
+        
         return true
     }
 
