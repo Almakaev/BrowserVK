@@ -14,4 +14,5 @@ protocol UserSearchViewOutput {
     */
 
     func viewIsReady()
+    func search(string: String)
 }

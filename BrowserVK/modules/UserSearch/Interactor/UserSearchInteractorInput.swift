@@ -10,4 +10,7 @@ import Foundation
 
 protocol UserSearchInteractorInput {
 
+    func loadSearchedContacts(name: String)
+    
+    func initVK()
 }

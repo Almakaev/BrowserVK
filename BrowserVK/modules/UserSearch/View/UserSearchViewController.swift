@@ -20,23 +20,26 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         setupInitialState()
         output.viewIsReady()
     }
 
     // MARK: UserSearchViewInput
     func setupInitialState() {
-        
-        // configurate table view
+
+        // configurate table view cell
         let nibCell = UINib(nibName: String(describing: UserSearchTableViewCell.self), bundle: nil)
         tableView.register(nibCell, forCellReuseIdentifier: UserSearchCellID)
         
         // configurate search controller
-        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
         navigationItem.titleView = searchController.searchBar
         self.searchController.searchBar.becomeFirstResponder()
+
+        definesPresentationContext = true
     }
 }
 
@@ -59,12 +62,12 @@ extension UserSearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension UserSearchViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
-    func updateSearchResults(for searchController: UISearchController) {
-        // TODO
-    }
+extension UserSearchViewController: UISearchBarDelegate {
 
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("\(searchBar.text!)")
+        output.search(string: searchBar.text!)
+    }
 }
 
 

@@ -14,5 +14,10 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
 
     func viewIsReady() {
         print("ok")
+        interactor.initVK()
+    }
+    
+    func search(string: String) {
+       interactor.loadSearchedContacts(name: string)
     }
 }
