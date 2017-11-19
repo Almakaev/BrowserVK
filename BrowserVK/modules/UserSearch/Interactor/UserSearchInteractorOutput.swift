@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 protocol UserSearchInteractorOutput: class {
-
+    
+    func loadedSearchedContacts(array: [JSON])
 }

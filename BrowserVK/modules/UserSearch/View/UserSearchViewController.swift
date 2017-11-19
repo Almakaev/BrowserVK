@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 let UserSearchCellID = "UserSearchCell"
 
 class UserSearchViewController: UIViewController, UserSearchViewInput {
     
     var output: UserSearchViewOutput!
+    var searchResults = [JSON]()
     let searchController = UISearchController(searchResultsController: nil)
     @IBOutlet weak var tableView: UITableView!
     
@@ -41,18 +43,28 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
 
         definesPresentationContext = true
     }
+    
+    func updateTableView() {
+        tableView.reloadData()
+    }
+    
+    func loadedSearchedContacts(array: [JSON]) {
+        searchResults = array
+    }
 }
 
 extension UserSearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return searchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UserSearchCellID, for: indexPath) as! UserSearchTableViewCell
         
-        // Configure the cell...
+        let contact = searchResults[indexPath.row]
+        
+        cell.contact = contact
         
         return cell
     }

@@ -5,7 +5,7 @@ target 'BrowserVK' do
   
   use_frameworks!
 
-  pod 'Alamofire'
+  pod 'SDWebImage', '~> 4.0'
   pod 'SwiftyVK'
   pod 'SwiftyJSON'
 

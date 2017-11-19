@@ -5,6 +5,7 @@
 //  Created by Ilyas Almakaev on 17/11/2017.
 //  Copyright © 2017 Ilyas. All rights reserved.
 //
+import SwiftyJSON
 
 protocol UserSearchViewInput: class {
 
@@ -14,4 +15,8 @@ protocol UserSearchViewInput: class {
     */
 
     func setupInitialState()
+    
+    func updateTableView()
+    
+    func loadedSearchedContacts(array: [JSON])
 }

@@ -5,7 +5,7 @@
 //  Created by Ilyas Almakaev on 17/11/2017.
 //  Copyright © 2017 Ilyas. All rights reserved.
 //
-import Alamofire
+
 import SwiftyVK
 import SwiftyJSON
 
@@ -13,24 +13,34 @@ class UserSearchInteractor: UserSearchInteractorInput, SwiftyVKDelegate {
 
     let vkAppID = "6265118"
     let scopes: Scopes = [.messages,.offline,.friends,.wall,.photos,.audio,.video,.docs,.market,.email]
+    var searchResults = [JSON]()
     
     weak var output: UserSearchInteractorOutput!
 
     func loadSearchedContacts(name: String) {
-        VK.API.Users.search([.q: "\(name)"])
+        
+        VK.API.Users.search([.q: "\(name)", .fields: "photo_50"])
             .configure(with: Config.init(httpMethod: .POST))
-            .onSuccess { print("SwiftyVK: users.get successed with \n \(JSON($0))") }
-            .onError { print("SwiftyVK: friends.get fail \n \($0)") }
+            .onSuccess {
+                let result = JSON($0)["items"].arrayValue
+                self.searchResults += result
+                print("search user success \n \(self.searchResults)")
+                
+                DispatchQueue.main.async {
+                    self.output.loadedSearchedContacts(array: self.searchResults)
+                }
+            }
+            .onError { print("search user fail \n \($0)") }
             .send()
     }
     
     func authorize() {
         VK.sessions?.default.logIn(
             onSuccess: { info in
-                print("SwiftyVK: success authorize with", info)
+                print("BrowserVK authorize with", info)
         },
             onError: { error in
-                print("SwiftyVK: authorize failed with", error)
+                print("BrowserVK authorize failed with", error)
         }
         )
     }

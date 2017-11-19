@@ -5,6 +5,7 @@
 //  Created by Ilyas Almakaev on 17/11/2017.
 //  Copyright © 2017 Ilyas. All rights reserved.
 //
+import SwiftyJSON
 
 class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSearchInteractorOutput {
 
@@ -19,5 +20,10 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     
     func search(string: String) {
        interactor.loadSearchedContacts(name: string)
+    }
+    
+    func loadedSearchedContacts(array: [JSON]) {
+        view.loadedSearchedContacts(array: array)
+        view.updateTableView()
     }
 }
