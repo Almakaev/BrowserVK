@@ -10,24 +10,10 @@ import SwiftyVK
 import SwiftyJSON
 
 class UserSearchInteractor: UserSearchInteractorInput {
-
-    let vkAppID = "6265118"
-    let scopes: Scopes = [.messages,.offline,.friends,.wall,.photos,.audio,.video,.docs,.market,.email]
-    var searchResults = [JSON]()
     
     weak var output: UserSearchInteractorOutput!
     var apiFacade: ApiFacade!
-    var pageString: String {
-        if pageNumber == 0 {
-            return "0"
-        } else {
-            return "\(pageNumber)"
-        }
-    }
-    
-    var pageNumber = 0
     var hasMore = false
-    var currentName = ""
     
     func getNextContacts() {
         apiFacade.getNextContacts()

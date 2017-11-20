@@ -16,13 +16,14 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     var output: UserSearchViewOutput!
     var searchResults = [JSON]()
     let searchController = UISearchController(searchResultsController: nil)
+    let refreshControl = UIRefreshControl()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         setupInitialState()
         output.viewIsReady()
     }
@@ -42,6 +43,15 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         searchController.dimsBackgroundDuringPresentation = false
         navigationItem.titleView = searchController.searchBar
         self.searchController.searchBar.becomeFirstResponder()
+        
+        // cofigurate refresh control
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        //TODO: add selector
+   //     refreshControl.addTarget(self, action: output.search(string: "text"), for: .valueChanged)
 
         definesPresentationContext = true
     }
@@ -93,7 +103,6 @@ extension UserSearchViewController: UITableViewDataSource, UITableViewDelegate {
 extension UserSearchViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        output.resetSearch()
         output.search(string: searchBar.text!)
     }
 }
