@@ -28,10 +28,10 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     }
     
     func loadedSearchedContacts(array: [JSON]) {
-        
         view.loadedSearchedContacts(array: array)
         view.updateTableView()
         view.stopAnimatingActivityIndicator()
+        view.stopRefreshControl()
     }
     
     func openUserInfoViewController(navigationController: UINavigationController, id: Int) {

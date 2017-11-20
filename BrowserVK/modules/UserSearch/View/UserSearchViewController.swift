@@ -17,6 +17,7 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     var searchResults = [JSON]()
     let searchController = UISearchController(searchResultsController: nil)
     let refreshControl = UIRefreshControl()
+    var nameContact = ""
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -50,8 +51,8 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         } else {
             tableView.addSubview(refreshControl)
         }
-        //TODO: add selector
-   //     refreshControl.addTarget(self, action: output.search(string: "text"), for: .valueChanged)
+
+        refreshControl.addTarget(self, action: #selector(searchWithRefreshControl), for: .valueChanged)
 
         definesPresentationContext = true
     }
@@ -70,6 +71,14 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     
     func stopAnimatingActivityIndicator() {
         activityIndicator.stopAnimating()
+    }
+    
+    @objc func searchWithRefreshControl() {
+        output.search(string: nameContact)
+    }
+    
+    func stopRefreshControl() {
+        refreshControl.endRefreshing()
     }
 }
 
@@ -103,7 +112,8 @@ extension UserSearchViewController: UITableViewDataSource, UITableViewDelegate {
 extension UserSearchViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        output.search(string: searchBar.text!)
+        nameContact = searchBar.text!
+        output.search(string: nameContact)
     }
 }
 

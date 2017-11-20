@@ -23,4 +23,6 @@ protocol UserSearchViewInput: class {
     func startAnimatingActivityIndicator()
     
     func stopAnimatingActivityIndicator()
+    
+    func stopRefreshControl()
 }

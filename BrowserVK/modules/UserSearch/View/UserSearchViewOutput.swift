@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol UserSearchViewOutput {
+@objc protocol UserSearchViewOutput {
 
     /**
         @author Ilyas Almakaev
