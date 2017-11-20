@@ -19,4 +19,8 @@ protocol UserSearchViewInput: class {
     func updateTableView()
     
     func loadedSearchedContacts(array: [JSON])
+    
+    func startAnimatingActivityIndicator()
+    
+    func stopAnimatingActivityIndicator()
 }

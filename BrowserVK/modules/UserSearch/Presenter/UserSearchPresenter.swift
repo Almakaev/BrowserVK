@@ -18,7 +18,8 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     }
     
     func search(string: String) {
-       interactor.loadSearchedContacts(name: string)
+        view.startAnimatingActivityIndicator()
+        interactor.loadSearchedContacts(name: string)
     }
     
     func resetSearch() {
@@ -26,8 +27,10 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     }
     
     func loadedSearchedContacts(array: [JSON]) {
+        
         view.loadedSearchedContacts(array: array)
         view.updateTableView()
+        view.stopAnimatingActivityIndicator()
     }
     
     func openUserInfoViewController(navigationController: UINavigationController, id: Int) {
@@ -35,11 +38,9 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     }
     
     func checkPagination(index: Int, arrayCount: Int) {
-        print("indexCell \(index) arrayCount \(arrayCount)")
         if index == arrayCount - 1 {
-            print("moreDataCheck")
             if interactor.hasMore {
-                print("moreData")
+                view.startAnimatingActivityIndicator()
                 interactor.getNextContacts()
             }
         }

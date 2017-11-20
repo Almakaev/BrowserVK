@@ -17,7 +17,7 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     var searchResults = [JSON]()
     let searchController = UISearchController(searchResultsController: nil)
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +53,14 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
     func loadedSearchedContacts(array: [JSON]) {
         searchResults = array
     }
+    
+    func startAnimatingActivityIndicator() {
+        activityIndicator.startAnimating()
+    }
+    
+    func stopAnimatingActivityIndicator() {
+        activityIndicator.stopAnimating()
+    }
 }
 
 extension UserSearchViewController: UITableViewDataSource, UITableViewDelegate {
@@ -85,7 +93,6 @@ extension UserSearchViewController: UITableViewDataSource, UITableViewDelegate {
 extension UserSearchViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchResults = []
         output.resetSearch()
         output.search(string: searchBar.text!)
     }

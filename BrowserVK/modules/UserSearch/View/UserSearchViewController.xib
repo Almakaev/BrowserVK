@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserSearchViewController" customModule="BrowserVK">
             <connections>
+                <outlet property="activityIndicator" destination="WLV-GQ-S30" id="Bto-Cm-Rd3"/>
                 <outlet property="tableView" destination="DkD-3Q-CLw" id="Ufn-QK-Uon"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="rw7-JV-99D"/>
             </connections>
@@ -29,11 +30,16 @@
                         <outlet property="delegate" destination="-1" id="r2L-1F-qhh"/>
                     </connections>
                 </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WLV-GQ-S30">
+                    <rect key="frame" x="177" y="323" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="DkD-3Q-CLw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="5dS-Cf-4AE"/>
                 <constraint firstItem="DkD-3Q-CLw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8oF-6X-YOC"/>
+                <constraint firstItem="WLV-GQ-S30" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="b5u-Yf-xyh"/>
+                <constraint firstItem="WLV-GQ-S30" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bQA-rg-BTi"/>
                 <constraint firstItem="DkD-3Q-CLw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fvu-D0-z7Z"/>
                 <constraint firstItem="DkD-3Q-CLw" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ki3-vK-v5J"/>
             </constraints>
