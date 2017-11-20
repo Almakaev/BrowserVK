@@ -9,66 +9,48 @@
 import SwiftyVK
 import SwiftyJSON
 
-class UserSearchInteractor: UserSearchInteractorInput, SwiftyVKDelegate {
+class UserSearchInteractor: UserSearchInteractorInput {
 
     let vkAppID = "6265118"
     let scopes: Scopes = [.messages,.offline,.friends,.wall,.photos,.audio,.video,.docs,.market,.email]
     var searchResults = [JSON]()
     
     weak var output: UserSearchInteractorOutput!
+    var apiFacade: ApiFacade!
+    var pageString: String {
+        if pageNumber == 0 {
+            return "0"
+        } else {
+            return "\(pageNumber)"
+        }
+    }
+    
+    var pageNumber = 0
+    var hasMore = false
+    var currentName = ""
+    
+    func getNextContacts() {
+        apiFacade.getNextContacts()
+    }
+    
+    func resetSearch() {
+        apiFacade.resetSearch()
+    }
 
     func loadSearchedContacts(name: String) {
-        
-        VK.API.Users.search([.q: "\(name)", .fields: "photo_50"])
-            .configure(with: Config.init(httpMethod: .POST))
-            .onSuccess {
-                let result = JSON($0)["items"].arrayValue
-                self.searchResults += result
-                print("search user success \n \(self.searchResults)")
-                
-                DispatchQueue.main.async {
-                    self.output.loadedSearchedContacts(array: self.searchResults)
-                }
-            }
-            .onError { print("search user fail \n \($0)") }
-            .send()
+        apiFacade.loadSearchedContacts(name: name)
     }
     
+    func loadedSearchedContacts(array: [JSON]) {
+        self.output.loadedSearchedContacts(array: array)
+    }
+
     func authorize() {
-        VK.sessions?.default.logIn(
-            onSuccess: { info in
-                print("BrowserVK authorize with", info)
-        },
-            onError: { error in
-                print("BrowserVK authorize failed with", error)
-        }
-        )
+        apiFacade.authorize()
     }
-    
+
     //TODO: add class for vk delegates
     func initVK() {
-        VK.setUp(appId: vkAppID, delegate: self)
-    }
-    
-    func vkNeedsScopes(for sessionId: String) -> Scopes {
-        return scopes
-    }
-    
-    func vkNeedToPresent(viewController: VKViewController) {
-        if let rootController = UIApplication.shared.keyWindow?.rootViewController {
-            rootController.present(viewController, animated: true, completion: nil)
-        }
-    }
-    
-    func vkTokenCreated(for sessionId: String, info: [String : String]) {
-        
-    }
-    
-    func vkTokenUpdated(for sessionId: String, info: [String : String]) {
-        
-    }
-    
-    func vkTokenRemoved(for sessionId: String) {
-        
+        apiFacade.initVK()
     }
 }

@@ -17,4 +17,9 @@ class UserSearchRouter: UserSearchRouterInput {
         window.makeKeyAndVisible()
     }
 
+    func openUserInfoViewController(navigationController: UINavigationController, id: Int) {
+        let userInfoViewController = UserInfoViewController()
+        let configureUserInfoViewController = UserInfoModuleConfigurator().configure(viewController: userInfoViewController, userID: id)
+        navigationController.pushViewController(configureUserInfoViewController, animated: true)
+    }
 }

@@ -14,7 +14,6 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     var router: UserSearchRouterInput!
 
     func viewIsReady() {
-        print("ok")
         interactor.initVK()
     }
     
@@ -22,8 +21,27 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
        interactor.loadSearchedContacts(name: string)
     }
     
+    func resetSearch() {
+        interactor.resetSearch()
+    }
+    
     func loadedSearchedContacts(array: [JSON]) {
         view.loadedSearchedContacts(array: array)
         view.updateTableView()
+    }
+    
+    func openUserInfoViewController(navigationController: UINavigationController, id: Int) {
+        router.openUserInfoViewController(navigationController: navigationController, id: id)
+    }
+    
+    func checkPagination(index: Int, arrayCount: Int) {
+        print("indexCell \(index) arrayCount \(arrayCount)")
+        if index == arrayCount - 1 {
+            print("moreDataCheck")
+            if interactor.hasMore {
+                print("moreData")
+                interactor.getNextContacts()
+            }
+        }
     }
 }

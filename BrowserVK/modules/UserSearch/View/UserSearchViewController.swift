@@ -34,6 +34,8 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         let nibCell = UINib(nibName: String(describing: UserSearchTableViewCell.self), bundle: nil)
         tableView.register(nibCell, forCellReuseIdentifier: UserSearchCellID)
         
+        tableView.tableFooterView = UIView(frame: .zero)
+        
         // configurate search controller
         searchController.searchBar.delegate = self
         searchController.hidesNavigationBarDuringPresentation = false
@@ -60,24 +62,31 @@ extension UserSearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: UserSearchCellID, for: indexPath) as! UserSearchTableViewCell
         
         let contact = searchResults[indexPath.row]
-        
         cell.contact = contact
-        
+
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        output.checkPagination(index: indexPath.row, arrayCount: searchResults.count)
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let row = indexPath.row
+        let id = searchResults[row]["id"].intValue
+        output.openUserInfoViewController(navigationController: self.navigationController!, id: id)
     }
 }
 
 extension UserSearchViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("\(searchBar.text!)")
+        searchResults = []
+        output.resetSearch()
         output.search(string: searchBar.text!)
     }
 }

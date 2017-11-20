@@ -7,10 +7,18 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 protocol UserSearchInteractorInput {
 
     func loadSearchedContacts(name: String)
+    func loadedSearchedContacts(array: [JSON])
     
     func initVK()
+    
+    func resetSearch()
+    
+    func getNextContacts()
+    
+    var hasMore: Bool { get set }
 }

@@ -28,6 +28,10 @@ class UserSearchModuleConfigurator {
         let interactor = UserSearchInteractor()
         interactor.output = presenter
         
+        let apiFacade = ApiFacade()
+        apiFacade.interactor = interactor
+        interactor.apiFacade = apiFacade
+        
         let navigation = UINavigationController(rootViewController: viewController)
 
         presenter.interactor = interactor
