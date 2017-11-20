@@ -12,6 +12,7 @@ import SwiftyJSON
 protocol UserSearchInteractorInput {
 
     func loadSearchedContacts(name: String)
+    
     func loadedSearchedContacts(array: [JSON])
     
     func initVK()

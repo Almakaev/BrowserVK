@@ -16,8 +16,12 @@ import UIKit
     */
 
     func viewIsReady()
+    
     func resetSearch()
+    
     func search(string: String)
+    
     func checkPagination(index: Int, arrayCount: Int)
+    
     func openUserInfoViewController(navigationController: UINavigationController, id: Int)
 }

@@ -28,6 +28,12 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         setupInitialState()
         output.viewIsReady()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.searchController.searchBar.becomeFirstResponder()
+    }
 
     // MARK: UserSearchViewInput
     func setupInitialState() {
@@ -43,7 +49,6 @@ class UserSearchViewController: UIViewController, UserSearchViewInput {
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
         navigationItem.titleView = searchController.searchBar
-        self.searchController.searchBar.becomeFirstResponder()
         
         // cofigurate refresh control
         if #available(iOS 10.0, *) {

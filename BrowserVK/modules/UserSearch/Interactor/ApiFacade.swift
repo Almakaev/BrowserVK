@@ -20,6 +20,7 @@ class ApiFacade: SwiftyVKDelegate {
     
     var interactor: UserSearchInteractorInput!
     var interactorUserInfo: UserInfoInteractorInput!
+    
     var pageString: String {
         if pageNumber == 0 {
             return "0"
@@ -44,12 +45,11 @@ class ApiFacade: SwiftyVKDelegate {
     func loadSearchedContacts(name: String) {
         
         currentName = name
-     //   print("pageString \(pageString)")
+
         VK.API.Users.search([.q: name, .offset: String(pageNumber), .limit: "20", .fields: "photo_50, nickname"])
             .configure(with: Config.init(httpMethod: .POST))
             .onSuccess {
                 let result = JSON($0)["items"].arrayValue
-                print("count result \(result.count)")
                 
                 if result.count == 20 {
                     self.interactor.hasMore = true
@@ -58,7 +58,6 @@ class ApiFacade: SwiftyVKDelegate {
                 }
                 
                 self.searchResults += result
-                print("search user success \n \(self.searchResults)")
                 
                 DispatchQueue.main.async {
                     self.interactor.loadedSearchedContacts(array: self.searchResults)
@@ -69,7 +68,6 @@ class ApiFacade: SwiftyVKDelegate {
     }
     
     func loadUserInfo(id: Int) {
-        print("load user info")
         VK.API.Users.get([.userId: String(id), .fields: "photo_200,nickname,screen_name,relation,sex"])
             .onSuccess {
                 print("SwiftyVK: friends.get successed with \n \(JSON($0))")
@@ -82,17 +80,6 @@ class ApiFacade: SwiftyVKDelegate {
             }
             .onError { print("SwiftyVK: friends.get failed with \n \($0)") }
             .send()
-    }
-    
-    func authorize() {
-        VK.sessions?.default.logIn(
-            onSuccess: { info in
-                print("BrowserVK authorize with", info)
-        },
-            onError: { error in
-                print("BrowserVK authorize failed with", error)
-        }
-        )
     }
 
     func initVK() {
