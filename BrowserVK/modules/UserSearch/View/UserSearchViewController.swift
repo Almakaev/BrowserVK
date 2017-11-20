@@ -117,6 +117,7 @@ extension UserSearchViewController: UITableViewDataSource, UITableViewDelegate {
 extension UserSearchViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        startAnimatingActivityIndicator()
         nameContact = searchBar.text!
         output.search(string: nameContact)
     }

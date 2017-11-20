@@ -31,11 +31,6 @@ class UserSearchInteractor: UserSearchInteractorInput {
         self.output.loadedSearchedContacts(array: array)
     }
 
-    func authorize() {
-        apiFacade.authorize()
-    }
-
-    //TODO: add class for vk delegates
     func initVK() {
         apiFacade.initVK()
     }

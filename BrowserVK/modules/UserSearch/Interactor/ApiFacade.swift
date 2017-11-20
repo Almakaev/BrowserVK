@@ -21,14 +21,6 @@ class ApiFacade: SwiftyVKDelegate {
     var interactor: UserSearchInteractorInput!
     var interactorUserInfo: UserInfoInteractorInput!
     
-    var pageString: String {
-        if pageNumber == 0 {
-            return "0"
-        } else {
-            return "\(pageNumber)"
-        }
-    }
-    
     var pageNumber = 0
     var currentName = ""
     

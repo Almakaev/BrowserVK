@@ -18,7 +18,6 @@ class UserSearchPresenter: UserSearchModuleInput, UserSearchViewOutput, UserSear
     }
     
     func search(string: String) {
-        view.startAnimatingActivityIndicator()
         resetSearch()
         interactor.loadSearchedContacts(name: string)
     }
